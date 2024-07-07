@@ -6,7 +6,7 @@ const expressSession = require("express-session");
 const flash = require("connect-flash");
 
 require("dotenv").config();
-
+const PORT = process.env.PORT || 3000;
 const ownersRouter = require("./routes/ownersRouter");
 const productsRouter = require("./routes/productsRouter");
 const usersRouter = require("./routes/usersRouter");
@@ -33,4 +33,4 @@ app.use("/owners", ownersRouter);
 app.use("/users", usersRouter);
 app.use("/products", productsRouter);
 
-app.listen(3000);
+app.listen(PORT);
